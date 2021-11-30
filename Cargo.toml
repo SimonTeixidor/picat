@@ -1,0 +1,33 @@
+[package]
+name = "pica"
+version = "0.1.0"
+edition = "2021"
+authors = ["Simon Persson <simon@flaskpost.me>"]
+
+[profile.release]
+lto = true
+panic = "abort"
+codegen-units = 1
+
+[dependencies]
+image = { version = "0.23", default-features = false }
+imagequant  = "3"
+rgb  = "0.8"
+lexopt = "0.2"
+
+[features]
+default = ["gif", "jpeg", "ico", "png" , "pnm", "tga", "tiff", "webp", "bmp", "hdr", "dxt", "dds", "farbfeld"]
+
+gif = ["image/gif"]
+jpeg = ["image/jpeg"]
+ico = ["image/ico"]
+png = ["image/png"]
+pnm = ["image/pnm"]
+tga = ["image/tga"]
+tiff = ["image/tiff"]
+webp = ["image/webp"]
+bmp = ["image/bmp"]
+hdr = ["image/hdr"]
+dxt = ["image/dxt"]
+dds = ["image/dds"]
+farbfeld = ["image/farbfeld"]
